@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Only use HashRouter here
-import Footer from './Footer';
-import Card from './Card';
-import Modal from './Modal';
-import Settings from './Settings';
-import WorkoutList from './WorkoutList';
-import ProgressChart from './components/ProgressChart';
-import MealPlanner from './MealPlanner';
-import FetchWorkouts from './components/FetchWorkouts';
-import FetchMeals from './components/FetchMeals';
-import Home from './Home';
-import Workout from './Workout';
-import NutritionTracker from './NutritionTracker';
-import Progress from './Progress';
+import Footer from './components/Footer';
+import Card from './components/Card';  // Assuming Card is in components
+import Modal from './components/Modal';  // Assuming Modal is in components
+import Settings from './components/Settings';  // Assuming Settings is in components
+import WorkoutList from './components/WorkoutList';  // Assuming WorkoutList is in components
+import ProgressChart from './components/ProgressChart';  // Assuming ProgressChart is in components
+import MealPlanner from './components/MealPlanner';  // Assuming MealPlanner is in components
+import FetchWorkouts from './components/FetchWorkouts';  // Assuming FetchWorkouts is in components
+import FetchMeals from './components/FetchMeals';  // Assuming FetchMeals is in components
+import Home from './components/Home';  // Assuming Home is in components
+import Workout from './components/Workout';  // Assuming Workout is in components
+import NutritionTracker from './components/NutritionTracker';  // Assuming NutritionTracker is in components
+import Progress from './components/Progress';  // Assuming Progress is in components
 
 const App = () => {
   const [workouts, setWorkouts] = useState([]);
@@ -56,7 +56,7 @@ const App = () => {
             element={
               <div>
                 <FetchMeals setMeals={setMeals} setLoading={setLoading} />
-                {loading ? <p>Loading meals...</p> : <NutritionTracker meals={meals} />}  {/* Use NutritionTracker component */}
+                {loading ? <p>Loading meals...</p> : <NutritionTracker meals={meals} />}
               </div>
             } 
           />

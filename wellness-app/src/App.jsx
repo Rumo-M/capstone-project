@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Footer from './components/Footer';
-import Nutrition from './Nutrition';
-import Workout from './Workouts';
-import Progress from './Progress';
+import Nutrition from './components/Nutrition';
+import Workout from './components/Workout';
+import Progress from './components/Progress';
 import Home from './components/Home';
 
 const App = () => {
-  const [workouts, setWorkouts] = useState([]);
+  const [workout, setWorkout] = useState([]);
   const [meals, setMeals] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(false); 

@@ -1,6 +1,6 @@
 // Progress.js
 import React from 'react';
-import ProgressChart from './components/ProgressChart';  // Assuming you already have this component for the chart
+import ProgressChart from './ProgressChart';  // Assuming you already have this component for the chart
 
 const Progress = () => {
   // Example progress data

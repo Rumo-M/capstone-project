@@ -88,4 +88,4 @@ const Workout = () => {
   );
 };
 
-export default Workout;z
+export default Workout;
