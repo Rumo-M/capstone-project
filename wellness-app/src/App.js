@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Only use HashRouter here
 import Footer from './Footer';
 import Card from './Card';
 import Modal from './Modal';

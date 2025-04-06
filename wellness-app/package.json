@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A React-based Health & Wellness application",
   "main": "index.js",
-  "homepage": "https://Rumo-M.github.io/react-project",
+  "homepage": "https://Rumo-M.github.io/capstone-project",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
