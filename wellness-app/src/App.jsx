@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Footer from './components/Footer';
 import Nutrition from './components/Nutrition';
@@ -7,11 +7,6 @@ import Progress from './components/Progress';
 import Home from './components/Home';
 
 const App = () => {
-  const [workout, setWorkout] = useState([]);
-  const [meals, setMeals] = useState([]);
-  const [modalOpen, setModalOpen] = useState(false);
-  const [loading, setLoading] = useState(false); 
-
   return (
     <Router>
       <div className="min-h-screen bg-gray-100 p-6">
@@ -30,19 +25,9 @@ const App = () => {
         {/* Routes */}
         <Routes>
           <Route path="/" element={<Home />} />
-
-          {/* Workout Route */}
-          <Route 
-           path="/workout" element={<Workout />} />
-        
-          {/* Nutrition Route */}
-          <Route 
-           path="/nutrition" element={<Nutrition />} />
-
-          {/* Progress Route */}
-          <Route 
-           path="/progress" element={<Progress />} />
-        
+          <Route path="/workout" element={<Workout />} />
+          <Route path="/nutrition" element={<Nutrition />} />
+          <Route path="/progress" element={<Progress />} />
         </Routes>
 
         {/* Footer */}
