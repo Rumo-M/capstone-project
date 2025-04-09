@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Only use HashRouter here
 import Footer from './components/Footer';
-import Card from './components/Card';  // Assuming Card is in components
-import Modal from './components/Modal';  // Assuming Modal is in components
+import Card from './components/Card';
+import Modal from './components/modal';
 import Settings from './components/Settings';  // Assuming Settings is in components
 import WorkoutList from './components/WorkoutList';  // Assuming WorkoutList is in components
 import ProgressChart from './components/ProgressChart';  // Assuming ProgressChart is in components
