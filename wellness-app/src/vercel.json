@@ -1,0 +1,13 @@
+{
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "vite.config.js",
+        "use": "@vercel/vite"
+      }
+    ]
+  }
+  

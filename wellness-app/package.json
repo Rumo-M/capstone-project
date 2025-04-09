@@ -2,7 +2,7 @@
   "name": "health-wellness-app",
   "version": "1.0.0",
   "description": "A React-based Health & Wellness application",
-  "main": "index.js",
+  "main": "src/index.js",
   "homepage": "https://Rumo-M.github.io/capstone-project",
   "scripts": {
     "dev": "vite",

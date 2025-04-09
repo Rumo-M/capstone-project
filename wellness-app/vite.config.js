@@ -1,19 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    // Ensure that both .js and .jsx files are handled
-    extensions: ['.js', '.jsx'],
-  },
   build: {
-    // Optional: Customize output options if needed
+    outDir: 'dist',  // Where the build output will be placed
     rollupOptions: {
-      output: {
-        manualChunks: undefined, // You can split your code here if needed
-      },
+      input: 'index.html', // Ensure it points to your entry HTML file
     },
+    chunkSizeWarningLimit: 1000,  // You can adjust chunk size warnings if necessary
   },
 });
