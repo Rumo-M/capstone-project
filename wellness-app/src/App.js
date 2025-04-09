@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
-import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom'; // Only use HashRouter here
+import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
 import Footer from './components/Footer';
 import Card from './components/Card';
-import Modal from './components/modal';
-import Settings from './components/Settings';  // Assuming Settings is in components
-import WorkoutList from './components/WorkoutList';  // Assuming WorkoutList is in components
-import ProgressChart from './components/ProgressChart';  // Assuming ProgressChart is in components
-import MealPlanner from './components/MealPlanner';  // Assuming MealPlanner is in components
-import FetchWorkouts from './components/FetchWorkouts';  // Assuming FetchWorkouts is in components
-import FetchMeals from './components/FetchMeals';  // Assuming FetchMeals is in components
-import Home from './components/Home';  // Assuming Home is in components
-import Workout from './components/Workout';  // Assuming Workout is in components
-import NutritionTracker from './components/NutritionTracker';  // Assuming NutritionTracker is in components
-import Progress from './components/Progress';  // Assuming Progress is in components
+import Modal from './components/Modal';
+import Settings from './components/Settings';
+import WorkoutList from './components/WorkoutList';
+import ProgressChart from './components/ProgressChart';
+import MealPlanner from './components/MealPlanner';
+import FetchWorkouts from './components/FetchWorkouts';
+import FetchMeals from './components/FetchMeals';
+import Home from './components/Home';
+import Workout from './components/Workout';
+import NutritionTracker from './components/NutritionTracker';
+import Progress from './components/Progress';
 
 const App = () => {
   const [workouts, setWorkouts] = useState([]);
   const [meals, setMeals] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   return (
     <Router>
@@ -39,41 +40,49 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
 
-          {/* Workout Route */}
-          <Route 
-            path="/workout" 
+          <Route
+            path="/workout"
             element={
               <div>
                 <FetchWorkouts setWorkouts={setWorkouts} setLoading={setLoading} />
                 {loading ? <p>Loading workouts...</p> : <WorkoutList workouts={workouts} />}
               </div>
-            } 
+            }
           />
 
-          {/* Nutrition Route */}
-          <Route 
-            path="/nutrition" 
+          <Route
+            path="/nutrition"
             element={
               <div>
                 <FetchMeals setMeals={setMeals} setLoading={setLoading} />
                 {loading ? <p>Loading meals...</p> : <NutritionTracker meals={meals} />}
               </div>
-            } 
+            }
           />
 
-          {/* Progress Route */}
-          <Route 
-            path="/progress" 
+          <Route
+            path="/progress"
             element={
               <div>
-                <ProgressChart data={[{ date: '2025-04-01', value: 5 }, { date: '2025-04-02', value: 10 }]} />
+                <ProgressChart
+                  data={[
+                    { date: '2025-04-01', value: 5 },
+                    { date: '2025-04-02', value: 10 },
+                  ]}
+                />
               </div>
-            } 
+            }
           />
         </Routes>
 
         {/* Open Settings Modal */}
-        <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded" onClick={() => setModalOpen(true)}>Open Settings</button>
+        <button
+          className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+          onClick={() => setModalOpen(true)}
+        >
+          Open Settings
+        </button>
+
         <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
           <Settings />
         </Modal>
